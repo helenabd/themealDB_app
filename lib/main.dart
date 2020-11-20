@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MealDB App',
       debugShowCheckedModeBanner: false,
-      home: SearchScreen(),
+      home: HomeScreen(),
     );
   }
 }

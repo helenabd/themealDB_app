@@ -9,39 +9,52 @@ class BodyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Colors.white,
         child: ListView(
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(16, 0, 0, 8),
+              margin: EdgeInsets.fromLTRB(16, 24, 0, 16),
               alignment: Alignment.centerLeft,
               child: Text(
                 'Pratos Recomendados',
                 style: TextStyle(
                     color: secundaryColor,
-                    fontSize: 20,
+                    fontSize: 24,
                     fontWeight: FontWeight.bold),
               ),
             ),
             Container(
-              height: 150,
-              margin: EdgeInsets.all(8),
+              height: 200,
+              margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
                 boxShadow: [
                   BoxShadow(
-                      offset: Offset(0, 7),
-                      blurRadius: 30,
-                      color: Colors.black12)
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 4,
+                    blurRadius: 12,
+                    offset: Offset(0, 4), // changes position of shadow
+                  ),
                 ],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image(
-                    image: AssetImage('assets/images/macarrao.jpg'),
-                    height: 75,
-                    fit: BoxFit.cover,
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Image(
+                      image: AssetImage('assets/images/macarrao.jpg'),
+                      height: 100,
+                      // width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Text(
                     'Macarrão',
@@ -53,14 +66,14 @@ class BodyHome extends StatelessWidget {
                   Text(
                     'Categoria',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     'Área',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   )
@@ -68,25 +81,37 @@ class BodyHome extends StatelessWidget {
               ),
             ),
             Container(
-              height: 150,
-              margin: EdgeInsets.all(8),
+              height: 200,
+              margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
                 boxShadow: [
                   BoxShadow(
-                      offset: Offset(0, 7),
-                      blurRadius: 30,
-                      color: Colors.black12)
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 4,
+                    blurRadius: 12,
+                    offset: Offset(0, 4), // changes position of shadow
+                  ),
                 ],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image(
-                    image: AssetImage('assets/images/macarrao.jpg'),
-                    height: 75,
-                    fit: BoxFit.cover,
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Image(
+                      image: AssetImage('assets/images/macarrao.jpg'),
+                      height: 100,
+                      // width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Text(
                     'Macarrão',
@@ -98,14 +123,14 @@ class BodyHome extends StatelessWidget {
                   Text(
                     'Categoria',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     'Área',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   )
@@ -113,25 +138,37 @@ class BodyHome extends StatelessWidget {
               ),
             ),
             Container(
-              height: 150,
-              margin: EdgeInsets.all(8),
+              height: 200,
+              margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
                 color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
                 boxShadow: [
                   BoxShadow(
-                      offset: Offset(0, 7),
-                      blurRadius: 30,
-                      color: Colors.black12)
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 4,
+                    blurRadius: 12,
+                    offset: Offset(0, 4), // changes position of shadow
+                  ),
                 ],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image(
-                    image: AssetImage('assets/images/macarrao.jpg'),
-                    height: 75,
-                    fit: BoxFit.cover,
+                  Container(
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Image(
+                      image: AssetImage('assets/images/macarrao.jpg'),
+                      height: 100,
+                      // width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   Text(
                     'Macarrão',
@@ -143,14 +180,14 @@ class BodyHome extends StatelessWidget {
                   Text(
                     'Categoria',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     'Área',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   )
