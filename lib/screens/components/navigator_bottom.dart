@@ -28,7 +28,7 @@ BottomNavigationBar navigationBar() {
           size: 32,
         ),
         title: Text(
-          'Busca',
+          'Pesquisar',
           style: TextStyle(
             color: secundaryColor,
             fontSize: 16,
@@ -43,7 +43,7 @@ BottomNavigationBar navigationBar() {
           size: 32,
         ),
         title: Text(
-          'Conta',
+          'Perfil',
           style: TextStyle(
             color: secundaryColor,
             fontSize: 16,

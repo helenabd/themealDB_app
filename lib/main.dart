@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:theMealDB_app/screens/home-screen.dart';
-import 'package:theMealDB_app/screens/search-screen.dart';
+import 'package:theMealDB_app/screens/item-screen.dart';
+import 'package:theMealDB_app/screens/profile-screen.dart';
+import 'package:theMealDB_app/screens/result_search-screen.dart';
 import 'package:theMealDB_app/screens/teste-screen.dart';
 
 void main() {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MealDB App',
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: ItemScreen(),
     );
   }
 }
