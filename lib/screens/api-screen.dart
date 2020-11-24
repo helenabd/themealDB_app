@@ -1,0 +1,253 @@
+import 'dart:async';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' show Client, Response;
+
+import 'components/app_bar_result.dart';
+import 'components/navigator_bottom.dart';
+
+Client client = Client();
+final String _baseUrl = 'https://www.themealdb.com/api/json/v1/1';
+
+Future<Item> fetchMeals() async {
+  List<Item> mealsItem;
+  Response response;
+  print("$_baseUrl/search.php?s=Arrabiata");
+  response = await client.get("$_baseUrl/random.php");
+
+  // print(response.body);
+  // print(response.statusCode);
+  print('\n' + response.body[0]);
+
+  if (response.statusCode == 200) {
+    mealsItem = (json.decode(response.body) as List)
+        .map((i) => Item.fromJson(i))
+        .toList();
+    print(mealsItem);
+  } else {
+    // If the server did not return a 200 OK response,
+    // then throw an exception.
+    throw Exception('Failed to load meal');
+  }
+}
+
+class Item {
+  String idMeal;
+  String strMeal;
+  String strCategory;
+  String strArea;
+  String strYoutube;
+  String strInstructions;
+  String strMealThumb;
+  String strIngredient1;
+  String strIngredient2;
+  String strIngredient3;
+  String strIngredient4;
+  String strIngredient5;
+  String strIngredient6;
+  String strIngredient7;
+  String strIngredient8;
+  String strIngredient9;
+  String strIngredient10;
+  String strIngredient11;
+  String strIngredient12;
+  String strIngredient13;
+  String strIngredient14;
+  String strIngredient15;
+  String strIngredient16;
+  String strIngredient17;
+  String strIngredient18;
+  String strIngredient19;
+  String strIngredient20;
+  String strMeasure1;
+  String strMeasure2;
+  String strMeasure3;
+  String strMeasure4;
+  String strMeasure5;
+  String strMeasure6;
+  String strMeasure7;
+  String strMeasure8;
+  String strMeasure9;
+  String strMeasure10;
+  String strMeasure11;
+  String strMeasure12;
+  String strMeasure13;
+  String strMeasure14;
+  String strMeasure15;
+  String strMeasure16;
+  String strMeasure17;
+  String strMeasure18;
+  String strMeasure19;
+  String strMeasure20;
+  String type;
+
+  Item(
+      {this.idMeal,
+      this.strMeal,
+      this.strCategory,
+      this.strArea,
+      this.strYoutube,
+      this.strInstructions,
+      this.strMealThumb,
+      this.strIngredient1,
+      this.strIngredient2,
+      this.strIngredient3,
+      this.strIngredient4,
+      this.strIngredient5,
+      this.strIngredient6,
+      this.strIngredient7,
+      this.strIngredient8,
+      this.strIngredient9,
+      this.strIngredient10,
+      this.strIngredient11,
+      this.strIngredient12,
+      this.strIngredient13,
+      this.strIngredient14,
+      this.strIngredient15,
+      this.strIngredient16,
+      this.strIngredient17,
+      this.strIngredient18,
+      this.strIngredient19,
+      this.strIngredient20,
+      this.strMeasure1,
+      this.strMeasure2,
+      this.strMeasure3,
+      this.strMeasure4,
+      this.strMeasure5,
+      this.strMeasure6,
+      this.strMeasure7,
+      this.strMeasure8,
+      this.strMeasure9,
+      this.strMeasure10,
+      this.strMeasure11,
+      this.strMeasure12,
+      this.strMeasure13,
+      this.strMeasure14,
+      this.strMeasure15,
+      this.strMeasure16,
+      this.strMeasure17,
+      this.strMeasure18,
+      this.strMeasure19,
+      this.strMeasure20,
+      this.type});
+
+  Item.fromJson(Map<String, dynamic> json) {
+    idMeal = json['idMeal'];
+    strMeal = json['strMeal'];
+    strCategory = json['strCategory'];
+    strArea = json['strArea'];
+    strYoutube = json['strYoutube'];
+    strInstructions = json['strInstructions'];
+    strMealThumb = json['strMealThumb'];
+    strIngredient1 = json['strIngredient1'];
+    strIngredient2 = json['strIngredient2'];
+    strIngredient3 = json['strIngredient3'];
+    strIngredient4 = json['strIngredient4'];
+    strIngredient5 = json['strIngredient5'];
+    strIngredient6 = json['strIngredient6'];
+    strIngredient7 = json['strIngredient7'];
+    strIngredient8 = json['strIngredient8'];
+    strIngredient9 = json['strIngredient9'];
+    strIngredient10 = json['strIngredient10'];
+    strIngredient11 = json['strIngredient11'];
+    strIngredient12 = json['strIngredient12'];
+    strIngredient13 = json['strIngredient13'];
+    strIngredient14 = json['strIngredient14'];
+    strIngredient15 = json['strIngredient15'];
+    strIngredient16 = json['strIngredient16'];
+    strIngredient17 = json['strIngredient17'];
+    strIngredient18 = json['strIngredient18'];
+    strIngredient19 = json['strIngredient19'];
+    strIngredient20 = json['strIngredient20'];
+    strMeasure1 = json['strMeasure1'];
+    strMeasure2 = json['strMeasure2'];
+    strMeasure3 = json['strMeasure3'];
+    strMeasure4 = json['strMeasure4'];
+    strMeasure5 = json['strMeasure5'];
+    strMeasure6 = json['strMeasure6'];
+    strMeasure7 = json['strMeasure7'];
+    strMeasure8 = json['strMeasure8'];
+    strMeasure9 = json['strMeasure9'];
+    strMeasure10 = json['strMeasure10'];
+    strMeasure11 = json['strMeasure11'];
+    strMeasure12 = json['strMeasure12'];
+    strMeasure13 = json['strMeasure13'];
+    strMeasure14 = json['strMeasure14'];
+    strMeasure15 = json['strMeasure15'];
+    strMeasure16 = json['strMeasure16'];
+    strMeasure17 = json['strMeasure17'];
+    strMeasure18 = json['strMeasure18'];
+    strMeasure19 = json['strMeasure19'];
+    strMeasure20 = json['strMeasure20'];
+    type = json['type'];
+  }
+}
+
+class ApiScreen extends StatelessWidget {
+  final Future<Item> item;
+  ApiScreen({Key key, this.item}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: resultAppBar(),
+      body: Center(
+        child: FutureBuilder<Item>(
+          future: fetchMeals(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              print(snapshot.data);
+              Item newItem = snapshot.data;
+              return ListView(
+                children: [
+                  Image(
+                    image: AssetImage('assets/images/macarrao.jpg'),
+                  ),
+                  Text(
+                    '${newItem.strMeal}',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Categoria:' + '${newItem.strCategory}',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Área:' + '${newItem.strArea}',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Instruções: ',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    '${newItem.strInstructions}',
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              );
+            } else if (snapshot.hasError) {
+              return Text("${snapshot.error}");
+            }
+            return CircularProgressIndicator();
+          },
+        ),
+      ),
+      bottomNavigationBar: navigationBar(),
+    );
+  }
+}
