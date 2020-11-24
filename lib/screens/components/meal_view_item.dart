@@ -1,52 +1,72 @@
 import 'package:flutter/material.dart';
+import 'package:theMealDB_app/model/item_model.dart';
+import 'package:theMealDB_app/resources/repository.dart';
 
 class MealView extends StatelessWidget {
   const MealView({
     Key key,
-  }) : super(key: key);
+    @required Repository repository,
+  })  : _repository = repository,
+        super(key: key);
+
+  final Repository _repository;
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Image(
-          image: AssetImage('assets/images/macarrao.jpg'),
-        ),
-        Text(
-          'Macarrão',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          'Categoria:',
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          'Área:',
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          'Instruções:',
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          'Season the salmon, then rub with oil. Mix the dressing ingredients together. Halve, stone, peel and slice the avocados. Halve and quarter the cucumber lengthways, then cut into slices. Divide salad, avocado and cucumber between four plates, then drizzle with half the dressing.\r\n\r\nHeat a non-stick pan. Add the salmon and fry for 3-4 mins on each side until crisp but still moist inside. Put a salmon fillet on top of each salad and drizzle over the remaining dressing. Serve warm.',
-          style: TextStyle(
-            fontSize: 14,
-          ),
-        ),
-      ],
+    return Center(
+      child: FutureBuilder<ItemModel>(
+        future: _repository.searchMeals('Arrabiata'),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            List<Meals> newItem = snapshot.data.meals;
+            return ListView(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: Image.network('${newItem[0].strMealThumb}'),
+                ),
+                Text(
+                  '${newItem[0].strMeal}',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'Categoria:' + '${newItem[0].strCategory}',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'Área:' + '${newItem[0].strArea}',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'Instruções: ',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  '${newItem[0].strInstructions}',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+              ],
+            );
+          } else if (snapshot.hasError) {
+            return Text("${snapshot.error}");
+          }
+          return CircularProgressIndicator();
+        },
+      ),
     );
   }
 }

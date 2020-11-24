@@ -14,6 +14,8 @@ class Repository {
 
   Future<ItemModel> searchMeals(String name) => mealsApi.searchMeals(name);
 
+  Future<ItemModel> randomMeals() => mealsApi.randomMeals();
+
   Future<ItemModel> searchCategories(String name) =>
       mealsApi.searchCategories();
 

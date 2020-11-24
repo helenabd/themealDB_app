@@ -37,6 +37,15 @@ class MealsApi {
     }
   }
 
+  Future<ItemModel> randomMeals() async {
+    final response = await client.get("$_baseUrl/random.php");
+    if (response.statusCode == 200) {
+      return ItemModel.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load detail meals');
+    }
+  }
+
   Future<ItemModel> searchCategories() async {
     Response response;
     response = await client.get("$_baseUrl/categories.php");
