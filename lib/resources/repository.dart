@@ -9,8 +9,8 @@ class Repository {
 
   Future<ItemModel> fetchAllMeals(String type) => mealsApi.fetchMeals(type);
 
-  Future<ItemModel> fetchDetailMeals(String detail) =>
-      mealsApi.fetchDetail(detail);
+  Future<ItemModel> fetchDetailMeals(int id) =>
+      mealsApi.fetchDetail(id.toString());
 
   Future<ItemModel> searchMeals(String name) => mealsApi.searchMeals(name);
 

@@ -15,7 +15,7 @@ class MealView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: FutureBuilder<ItemModel>(
-        future: _repository.searchMeals('Arrabiata'),
+        future: _repository.searchMeals('New York cheesecake'),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Meals> newItem = snapshot.data.meals;
