@@ -20,10 +20,13 @@ class MealView extends StatelessWidget {
           if (snapshot.hasData) {
             List<Meals> newItem = snapshot.data.meals;
             return ListView(
+              padding: EdgeInsets.all(10.0),
               children: [
                 Container(
-                  padding: EdgeInsets.all(8.0),
                   child: Image.network('${newItem[0].strMealThumb}'),
+                ),
+                SizedBox(
+                  height: 10.0,
                 ),
                 Text(
                   '${newItem[0].strMeal}',
@@ -32,19 +35,28 @@ class MealView extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(
+                  height: 8.0,
+                ),
                 Text(
-                  'Categoria:' + '${newItem[0].strCategory}',
+                  'Categoria: ' + '${newItem[0].strCategory}',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(
+                  height: 8.0,
+                ),
                 Text(
-                  'Área:' + '${newItem[0].strArea}',
+                  'Área: ' + '${newItem[0].strArea}',
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
+                ),
+                SizedBox(
+                  height: 8.0,
                 ),
                 Text(
                   'Instruções: ',
@@ -53,8 +65,12 @@ class MealView extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(
+                  height: 6.0,
+                ),
                 Text(
                   '${newItem[0].strInstructions}',
+                  textAlign: TextAlign.justify,
                   style: TextStyle(
                     fontSize: 14,
                   ),

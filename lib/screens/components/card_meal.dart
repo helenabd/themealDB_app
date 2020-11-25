@@ -64,14 +64,14 @@ class CardMeal extends StatelessWidget {
                     'Categoria: ' + '${newItem[0].strCategory}',
                     style: TextStyle(
                       fontSize: 14,
-                      // fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     'Área: ' + '${newItem[0].strArea}',
                     style: TextStyle(
                       fontSize: 14,
-                      // fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold,
                     ),
                   )
                 ],
