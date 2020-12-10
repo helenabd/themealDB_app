@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/screens/components/app_bar_home.dart';
-import 'package:theMealDB_app/screens/components/navigator_bottom.dart';
-import 'package:theMealDB_app/screens/home-screen.dart';
-import 'package:theMealDB_app/screens/profile-screen.dart';
-import 'package:theMealDB_app/screens/search-screen.dart';
+
+import '../screens/home-screen.dart';
+import '../screens/profile-screen.dart';
+import 'category-screen.dart';
+import '../widgets/app_bar_home.dart';
+import '../widgets/navigator_bottom.dart';
 
 class TabsScreen extends StatefulWidget {
   @override
@@ -11,6 +12,8 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
+  // final _repository = Repository();
+
   List<Map<String, Object>> _pages;
   int _selectedPageIndex = 0;
 
@@ -21,7 +24,9 @@ class _TabsScreenState extends State<TabsScreen> {
         'page': HomeScreen(),
       },
       {
-        'page': SearchScreen(),
+        'page': CategoryScreen(
+            // repository: _repository,
+            ),
       },
       {
         'page': ProfileScreen(),

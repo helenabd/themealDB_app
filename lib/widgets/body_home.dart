@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/resources/repository.dart';
-import 'package:theMealDB_app/screens/components/card_meal.dart';
-import 'package:theMealDB_app/screens/components/subtitle_box.dart';
+
+import '../resources/repository.dart';
+import '../widgets/card_meal.dart';
+import '../widgets/subtitle_box.dart';
 
 class BodyHome extends StatelessWidget {
   final pageViewController = PageController();
@@ -14,7 +15,7 @@ class BodyHome extends StatelessWidget {
         color: Colors.white,
         child: ListView(
           children: [
-            Subtitle(),
+            Subtitle('Pratos Recomendados'),
             CardMeal(repository: _repository),
             CardMeal(repository: _repository),
             CardMeal(repository: _repository),

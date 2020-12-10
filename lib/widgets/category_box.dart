@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/screens/components/search_box.dart';
 
-import '../../theme.dart';
+import '../widgets/search_box.dart';
+import '../theme.dart';
 
 class CategoryBox extends StatelessWidget {
   @override

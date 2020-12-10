@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme.dart';
+import '../theme.dart';
 
 BottomNavigationBar navigationBar(Function selectPage, int selectedPageIndex) {
   return BottomNavigationBar(
@@ -22,8 +22,8 @@ BottomNavigationBar navigationBar(Function selectPage, int selectedPageIndex) {
         label: 'Início',
       ),
       BottomNavigationBarItem(
-        icon: Icon(Icons.search),
-        label: 'Pesquisar',
+        icon: Icon(Icons.category),
+        label: 'Categorias',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.person),

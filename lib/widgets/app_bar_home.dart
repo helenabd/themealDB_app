@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../theme.dart';
+import '../theme.dart';
 
-AppBar resultAppBar() {
+AppBar homeAppBar() {
   return AppBar(
     centerTitle: true,
     backgroundColor: Colors.white,
     elevation: 0,
-    leading: IconButton(
-      icon: Icon(
-        Icons.arrow_back,
-        color: secundaryColor,
-      ),
-      onPressed: () {},
-    ),
     title: RichText(
       text: TextSpan(children: [
         TextSpan(

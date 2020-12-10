@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/resources/repository.dart';
-import 'package:theMealDB_app/screens/components/card_meal.dart';
-import 'package:theMealDB_app/screens/components/app_bar_result.dart';
-import 'package:theMealDB_app/screens/components/navigator_bottom.dart';
 
-import 'components/result_subtitle.dart';
+import '../resources/repository.dart';
+import '../widgets/app_bar_result.dart';
+import '../widgets/result_subtitle.dart';
+import '../widgets/card_meal.dart';
 
 class ResultSearchScreen extends StatelessWidget {
   final _repository = Repository();

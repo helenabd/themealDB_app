@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/screens/components/app_bar_home.dart';
-import 'package:theMealDB_app/screens/components/category_box.dart';
-import 'package:theMealDB_app/screens/components/navigator_bottom.dart';
+
+import '../widgets/category_box.dart';
 
 class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: homeAppBar(),
+      // appBar: homeAppBar(),
       body: Container(
         child: CategoryBox(),
       ),

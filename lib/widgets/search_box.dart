@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme.dart';
+import '../theme.dart';
 
 class SearchBox extends StatelessWidget {
   final ValueChanged<String> onChanged;

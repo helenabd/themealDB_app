@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../theme.dart';
+import '../theme.dart';
 
-class Subtitle extends StatelessWidget {
-  const Subtitle({
+class ResultSubtitle extends StatelessWidget {
+  const ResultSubtitle({
     Key key,
   }) : super(key: key);
 
@@ -13,10 +13,10 @@ class Subtitle extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(16, 24, 0, 16),
       alignment: Alignment.centerLeft,
       child: Text(
-        'Pratos Recomendados',
+        '4 resultados para "Macarrão"',
         style: TextStyle(
           color: secundaryColor,
-          fontSize: 24,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
       ),

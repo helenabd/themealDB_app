@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/resources/repository.dart';
-import 'package:theMealDB_app/screens/components/app_bar_result.dart';
-import 'package:theMealDB_app/screens/components/navigator_bottom.dart';
 
-import 'components/meal_view_item.dart';
+import '../widgets/meal_view_item.dart';
+import '../widgets/app_bar_result.dart';
+import '../resources/repository.dart';
 
 class ItemScreen extends StatelessWidget {
   final _repository = Repository();

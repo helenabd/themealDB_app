@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/screens/components/navigator_bottom.dart';
 
 import '../theme.dart';
 
