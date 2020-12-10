@@ -20,7 +20,7 @@ class CardMeal extends StatelessWidget {
           if (snapshot.hasData) {
             List<Meals> newItem = snapshot.data.meals;
             return Container(
-              height: 200,
+              height: 220,
               margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(

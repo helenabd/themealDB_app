@@ -13,7 +13,7 @@ class ItemScreen extends StatelessWidget {
     return Scaffold(
       appBar: resultAppBar(),
       body: MealView(repository: _repository),
-      bottomNavigationBar: navigationBar(),
+      // bottomNavigationBar: navigationBar(),
     );
   }
 }

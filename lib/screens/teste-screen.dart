@@ -8,7 +8,7 @@ class TesteScreen extends StatelessWidget {
     return Scaffold(
       appBar: homeAppBar(),
       body: CardCatalog(),
-      bottomNavigationBar: navigationBar(),
+      // bottomNavigationBar: navigationBar(),
     );
   }
 }

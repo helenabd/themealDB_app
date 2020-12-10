@@ -11,7 +11,7 @@ class SearchScreen extends StatelessWidget {
       body: Container(
         child: CategoryBox(),
       ),
-      bottomNavigationBar: navigationBar(),
+      // bottomNavigationBar: navigationBar(),
     );
   }
 }

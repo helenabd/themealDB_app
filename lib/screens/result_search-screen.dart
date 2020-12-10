@@ -22,7 +22,7 @@ class ResultSearchScreen extends StatelessWidget {
           CardMeal(repository: _repository),
         ],
       ),
-      bottomNavigationBar: navigationBar(),
+      // bottomNavigationBar: navigationBar(),
     );
   }
 }
