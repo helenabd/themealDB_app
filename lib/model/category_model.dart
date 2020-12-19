@@ -1,15 +1,21 @@
-class CategoryModel {
-  List<Category> categories;
+import 'package:flutter/foundation.dart';
 
-  CategoryModel({this.categories});
+class CategoryModel with ChangeNotifier {
+  List<Category> _categories;
+
+  CategoryModel(this._categories);
 
   CategoryModel.fromJson(Map<String, dynamic> json) {
     if (json['categories'] != null) {
-      categories = new List<Category>();
+      _categories = new List<Category>();
       json['categories'].forEach((v) {
-        categories.add(new Category.fromJson(v));
+        _categories.add(new Category.fromJson(v));
       });
     }
+  }
+
+  List<Category> get categories {
+    return [..._categories];
   }
 }
 

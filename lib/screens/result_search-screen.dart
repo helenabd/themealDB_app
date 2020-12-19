@@ -11,14 +11,15 @@ class ResultSearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: resultAppBar(),
+      appBar: resultAppBar(context),
       body: ListView(
         children: [
           ResultSubtitle(),
-          CardMeal(repository: _repository),
-          CardMeal(repository: _repository),
-          CardMeal(repository: _repository),
-          CardMeal(repository: _repository),
+          for (int i = 0; i <= 3; i++) CardMeal(repository: _repository),
+
+          // CardMeal(repository: _repository),
+          // CardMeal(repository: _repository),
+          // CardMeal(repository: _repository),
         ],
       ),
       // bottomNavigationBar: navigationBar(),

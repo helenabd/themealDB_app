@@ -4,6 +4,7 @@ import 'package:theMealDB_app/widgets/category_item.dart';
 import '../resources/repository.dart';
 
 class CategoryScreen extends StatelessWidget {
+  static const routeName = '/category';
   final _repository = Repository();
   // const TesteScreen({
   //   Key key,

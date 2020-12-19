@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../theme.dart';
 
-AppBar resultAppBar() {
+AppBar resultAppBar(BuildContext context) {
   return AppBar(
     centerTitle: true,
     backgroundColor: Colors.white,
@@ -12,7 +12,9 @@ AppBar resultAppBar() {
         Icons.arrow_back,
         color: secundaryColor,
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pop(context);
+      },
     ),
     title: RichText(
       text: TextSpan(children: [
