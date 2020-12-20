@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/model/categories_item_model.dart';
 
 import '../resources/repository.dart';
+import '../model/categories_item_model.dart';
 import '../widgets/app_bar_result.dart';
 import '../widgets/result_subtitle.dart';
-import '../widgets/card_meal.dart';
+import '../widgets/card_meal_result.dart';
 
 class ResultSearchScreen extends StatelessWidget {
   static const routeName = 'result-search';
@@ -19,20 +19,20 @@ class ResultSearchScreen extends StatelessWidget {
         future: _repository.fetchCategories(category),
         builder: (context, snapshot) {
           List<CategoriesItem> categories = snapshot.data.categoriesItem;
-          // int lenght = categories.length;
+          int lenght = categories.length;
           return Scaffold(
             appBar: resultAppBar(context),
             body: ListView(
               children: [
                 ResultSubtitle(
                   category: category,
-                  lenght: categories.length,
+                  lenght: lenght,
                 ),
-                // for (int i = 0; i <= 3; i++)
-                CardMeal(repository: _repository),
-                CardMeal(repository: _repository),
-                CardMeal(repository: _repository),
-                CardMeal(repository: _repository),
+                for (int i = 0; i < lenght; i++)
+                  CardMealResult(
+                    repository: _repository,
+                    title: categories[i].strMeal,
+                  ),
               ],
             ),
             // bottomNavigationBar: navigationBar(),

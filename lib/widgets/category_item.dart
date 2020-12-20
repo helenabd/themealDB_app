@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:theMealDB_app/screens/result_search-screen.dart';
 
 import '../model/category_model.dart';
 import '../resources/repository.dart';
+import '../screens/result_search-screen.dart';
 
 class CategoryItem extends StatelessWidget {
   CategoryItem({
