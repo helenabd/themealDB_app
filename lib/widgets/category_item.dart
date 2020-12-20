@@ -64,7 +64,7 @@ class CategoryItem extends StatelessWidget {
                                   color: Colors.black26,
                                   padding: EdgeInsets.symmetric(
                                     vertical: 5,
-                                    horizontal: 20,
+                                    horizontal: 18,
                                   ),
                                   child: Text(
                                     '${newCategory[index].strCategory}',

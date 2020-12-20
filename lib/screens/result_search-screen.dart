@@ -17,25 +17,30 @@ class ResultSearchScreen extends StatelessWidget {
       child: FutureBuilder<CategoryItemModel>(
         future: _repository.fetchCategories(category),
         builder: (context, snapshot) {
-          List<CategoriesItem> categories = snapshot.data.categoriesItem;
-          int lenght = categories.length;
-          return Scaffold(
-            appBar: resultAppBar(context),
-            body: ListView(
-              children: [
-                ResultSubtitle(
-                  category: category,
-                  lenght: lenght,
-                ),
-                for (int i = 0; i < lenght; i++)
-                  CardMealResult(
-                    repository: _repository,
-                    title: categories[i].strMeal,
+          if (snapshot.hasData) {
+            List<CategoriesItem> categories = snapshot.data.categoriesItem;
+            int lenght = categories.length;
+            return Scaffold(
+              appBar: resultAppBar(context),
+              body: ListView(
+                children: [
+                  ResultSubtitle(
+                    category: category,
+                    lenght: lenght,
                   ),
-              ],
-            ),
-            // bottomNavigationBar: navigationBar(),
-          );
+                  for (int i = 0; i < lenght; i++)
+                    CardMealResult(
+                      repository: _repository,
+                      title: categories[i].strMeal,
+                    ),
+                ],
+              ),
+              // bottomNavigationBar: navigationBar(),
+            );
+          } else if (snapshot.hasError) {
+            return Text('${snapshot.error}');
+          }
+          return CircularProgressIndicator();
         },
       ),
     );

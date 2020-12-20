@@ -54,8 +54,9 @@ class MealView extends StatelessWidget {
                 Text(
                   '${newItem[0].strMeal}',
                   style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    fontFamily: 'Quicksand',
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 SizedBox(

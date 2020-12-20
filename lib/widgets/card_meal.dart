@@ -66,7 +66,7 @@ class CardMeal extends StatelessWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       child: Image.network(
@@ -78,8 +78,9 @@ class CardMeal extends StatelessWidget {
                     Text(
                       '${newItem[0].strMeal}',
                       style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        fontFamily: 'Quicksand',
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     Row(

@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MealDB App',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Montserrat'),
       // home: TabsScreen(),
       initialRoute: '/',
       routes: {

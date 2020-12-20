@@ -49,7 +49,7 @@ class CardMealResult extends StatelessWidget {
                     arguments: newItem[0].strMeal);
               },
               child: Container(
-                height: 260,
+                height: 280,
                 margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -70,7 +70,7 @@ class CardMealResult extends StatelessWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       child: Image.network(
@@ -82,8 +82,9 @@ class CardMealResult extends StatelessWidget {
                     Text(
                       '${newItem[0].strMeal}',
                       style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        fontFamily: 'Quicksand',
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     Row(

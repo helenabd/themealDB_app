@@ -9,14 +9,15 @@ class Subtitle extends StatelessWidget {
 
   Widget buildSectionTitle(BuildContext context, String title) {
     return Container(
-      margin: EdgeInsets.fromLTRB(16, 24, 0, 16),
+      margin: EdgeInsets.fromLTRB(16, 20, 0, 16),
       alignment: Alignment.centerLeft,
       child: Text(
         title,
         style: TextStyle(
           color: secundaryColor,
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
+          fontSize: 26,
+          fontFamily: 'Quicksand',
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
