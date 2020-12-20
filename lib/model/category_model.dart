@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class CategoryModel with ChangeNotifier {
   List<Category> _categories;
 
-  CategoryModel(this._categories);
+  // CategoryModel(this._categories);
 
   CategoryModel.fromJson(Map<String, dynamic> json) {
     if (json['categories'] != null) {

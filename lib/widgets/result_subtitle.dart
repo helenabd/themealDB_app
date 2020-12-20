@@ -5,7 +5,14 @@ import '../theme.dart';
 class ResultSubtitle extends StatelessWidget {
   const ResultSubtitle({
     Key key,
-  }) : super(key: key);
+    @required String category,
+    @required int lenght,
+  })  : _category = category,
+        _lenght = lenght,
+        super(key: key);
+
+  final String _category;
+  final int _lenght;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +20,7 @@ class ResultSubtitle extends StatelessWidget {
       margin: EdgeInsets.fromLTRB(16, 24, 0, 16),
       alignment: Alignment.centerLeft,
       child: Text(
-        '4 resultados para "Macarrão"',
+        '$_lenght resultados para "$_category"',
         style: TextStyle(
           color: secundaryColor,
           fontSize: 20,

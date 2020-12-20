@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theMealDB_app/screens/result_search-screen.dart';
 
 import '../model/category_model.dart';
 import '../resources/repository.dart';
@@ -15,76 +16,80 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 14,
-      childAspectRatio: 3 / 2,
-      crossAxisCount: 2,
-      children: List.generate(14, (index) {
-        return Center(
-          child: FutureBuilder<CategoryModel>(
-            future: _repository.searchCategories(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                List<Category> newCategory = snapshot.data.categories;
-                return InkWell(
-                  onTap: () {},
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    elevation: 4,
-                    margin: EdgeInsets.all(10),
-                    child: Column(
-                      children: <Widget>[
-                        Stack(
-                          children: <Widget>[
-                            ClipRRect(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(15),
-                                topRight: Radius.circular(15),
-                              ),
-                              child: Image.network(
-                                '${newCategory[index].strCategoryThumb}',
-                                height: 100,
-                                width: double.infinity,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Center(
-                              heightFactor: 3,
-                              child: Container(
-                                width: 300,
-                                color: Colors.black26,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 5,
-                                  horizontal: 20,
+    return Center(
+      child: FutureBuilder<CategoryModel>(
+          future: _repository.searchCategories(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              List<Category> newCategory = snapshot.data.categories;
+              int length = newCategory.length;
+              return GridView.count(
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 14,
+                childAspectRatio: 3 / 2,
+                crossAxisCount: 2,
+                children: List.generate(length, (index) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(
+                          ResultSearchScreen.routeName,
+                          arguments: newCategory[index].strCategory);
+                    },
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      elevation: 4,
+                      margin: EdgeInsets.all(10),
+                      child: Column(
+                        children: <Widget>[
+                          Stack(
+                            children: <Widget>[
+                              ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(15),
+                                  topRight: Radius.circular(15),
                                 ),
-                                child: Text(
-                                  '${newCategory[index].strCategory}',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
+                                child: Image.network(
+                                  '${newCategory[index].strCategoryThumb}',
+                                  height: 100,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              Center(
+                                heightFactor: 3,
+                                child: Container(
+                                  width: 300,
+                                  color: Colors.black26,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 5,
+                                    horizontal: 20,
                                   ),
-                                  softWrap: true,
-                                  overflow: TextOverflow.fade,
+                                  child: Text(
+                                    '${newCategory[index].strCategory}',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                    ),
+                                    softWrap: true,
+                                    overflow: TextOverflow.fade,
+                                  ),
                                 ),
-                              ),
-                            )
-                          ],
-                        )
-                      ],
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
-              }
-              return CircularProgressIndicator();
-            },
-          ),
-        );
-      }),
+                  );
+                }),
+              );
+            } else if (snapshot.hasError) {
+              return Text('${snapshot.error}');
+            }
+            return CircularProgressIndicator();
+          }),
     );
   }
 }
@@ -206,4 +211,4 @@ class CategoryItem extends StatelessWidget {
 //         },
 //       ),
 //     );
-//   }
+// }

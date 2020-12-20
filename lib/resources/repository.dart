@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:theMealDB_app/model/categories_item_model.dart';
 import 'package:theMealDB_app/model/category_model.dart';
 import 'package:theMealDB_app/model/item_model.dart';
 
@@ -19,6 +20,6 @@ class Repository {
 
   Future<CategoryModel> searchCategories() => mealsApi.searchCategories();
 
-  Future<ItemModel> fetchCategories(String category) =>
+  Future<CategoryItemModel> fetchCategories(String category) =>
       mealsApi.fetchCategories(category);
 }

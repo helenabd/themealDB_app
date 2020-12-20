@@ -45,7 +45,7 @@ class CardMeal extends StatelessWidget {
                     arguments: newItem[0].strMeal);
               },
               child: Container(
-                height: 240,
+                height: 260,
                 margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
@@ -68,10 +68,12 @@ class CardMeal extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.network(
-                      '${newItem[0].strMealThumb}',
-                      height: 120,
-                      fit: BoxFit.cover,
+                    Container(
+                      child: Image.network(
+                        '${newItem[0].strMealThumb}',
+                        height: 120,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     Text(
                       '${newItem[0].strMeal}',

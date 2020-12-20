@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:theMealDB_app/screens/category-screen.dart';
 import 'package:theMealDB_app/screens/item-screen.dart';
+import 'package:theMealDB_app/screens/result_search-screen.dart';
 
 import './screens/home-screen.dart';
 import './screens/tabs_screen.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/': (ctx) => TabsScreen(),
         CategoryScreen.routeName: (ctx) => CategoryScreen(),
         ItemScreen.routeName: (ctx) => ItemScreen(),
+        ResultSearchScreen.routeName: (ctx) => ResultSearchScreen(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(
