@@ -13,7 +13,6 @@ class ResultSearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final category = ModalRoute.of(context).settings.arguments as String;
-    print(category);
     return Center(
       child: FutureBuilder<CategoryItemModel>(
         future: _repository.fetchCategories(category),

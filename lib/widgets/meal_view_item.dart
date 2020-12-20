@@ -14,6 +14,26 @@ class MealView extends StatelessWidget {
   final Repository _repository;
   final String _title;
 
+  Widget _buildSubtitle(String subtitle) {
+    return Text(
+      subtitle,
+      style: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
+  Widget _buildDescription(String description) {
+    return Text(
+      description,
+      style: TextStyle(
+        fontSize: 16,
+      ),
+      textAlign: TextAlign.justify,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -41,43 +61,29 @@ class MealView extends StatelessWidget {
                 SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                  'Categoria: ' + '${newItem[0].strCategory}',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  children: [
+                    _buildSubtitle('Categoria: '),
+                    _buildDescription(newItem[0].strCategory),
+                  ],
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                  'Área: ' + '${newItem[0].strArea}',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  children: [
+                    _buildSubtitle('Área: '),
+                    _buildDescription(newItem[0].strArea),
+                  ],
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                  'Instruções: ',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                _buildSubtitle('Instruções:'),
                 SizedBox(
                   height: 8.0,
                 ),
-                Text(
-                  '${newItem[0].strInstructions}',
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
+                _buildDescription(newItem[0].strInstructions),
               ],
             );
           } else if (snapshot.hasError) {
