@@ -17,17 +17,17 @@ The MealDB
 ## Screenshot 📷
 -📌 **Home Screen**
 <pre>
-     <img src="screenshot/home_screen.png" alt="Home Screen" height="425">      <img src="" alt="Home Screen Gif" height="425">      <img src="screenshot/meal_detail_screen.png" alt="Meal Detail Screen" height="425">
+     <img src="screenshot/home_screen.png" alt="Home Screen" height="425">      <img src="screenshot/home_screen.gif" alt="Home Screen Gif" height="425">      <img src="screenshot/meal_detail_screen.png" alt="Meal Detail Screen" height="425">
 </pre>
 
 -📌 **Category Screen**
 <pre>
-                        <img src="screenshot/category_screen.png" alt="Category Screen" height="425">     <img src="" alt="Category Screen Gif" height="425">
+                        <img src="screenshot/category_screen.png" alt="Category Screen" height="425">     <img src="screenshot/category_screen.gif" alt="Category Screen Gif" height="425">
 </pre>
 
 -📌 **Result Category Screen**
 <pre>
-     <img src="" alt="Result Category Screen" height="425">      <img src="screenshot/result_screen.png" alt="Result Category Screen" height="425">      <img src="" alt="Result Category Screen" height="425">
+     <img src="screenshot/categories_result.gif" alt="Result Category Screen" height="425">      <img src="screenshot/result_screen.png" alt="Result Category Screen" height="425">      <img src="screenshot/result_screen.gif" alt="Result Category Screen" height="425">
 </pre>
 
 
